@@ -32,21 +32,6 @@ fn build_scores_table(results: &str) -> HashMap<String, TeamScores> {
         // conceded by team 2. Similarly, goals scored by team 2 will be the
         // number of goals conceded by team 1.
 
-        // Hint 1: Use the `entry()` and `or_insert()` (or `or_insert_with()`) methods of
-        //         `HashMap` to insert the default value of `TeamScores` if a team doesn't
-        //         exist in the table yet.
-
-        // Learn more in The Book:
-        // https://doc.rust-lang.org/book/ch08-03-hash-maps.html#only-inserting-a-value-if-the-key-has-no-value
-
-        // Hint 2: If there is already an entry for a given key, the value returned by
-        //         `entry()` can be updated based on the existing value.
-
-        // Learn more in The Book:
-        // https://doc.rust-lang.org/book/ch08-03-hash-maps.html#updating-a-value-based-on-the-old-value
-
-        // adjuntar en la tabla el nombre del equipo
-
         let t1 = scores.entry(team_1_name.to_string()).or_insert(TeamScores {
             goals_scored: 0,
             goals_conceded: 0,
